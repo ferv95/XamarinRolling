@@ -38,32 +38,30 @@ namespace XamarinRolling.ViewModels
             }
         }
 
-        public ICommand SubmitCommand
-        {
-            get
-            {
-                return new Command(async () =>
-                {
-                    Plantilla empleado = await helper.ExisteEmpleado(email, password);
-
-                    if (empleado == null)
-                    {
-                        DisplayInvalidLoginPrompt();
-                    }
-                    else
-                    {
-                        DatosPerfil.CodPerfil = empleado.Codigo;
-                        await Application.Current.MainPage.Navigation.PushModalAsync(new MainPage());
-                    }
-
-                });
-            }
-        }
+        public ICommand SubmitCommand { protected set; get; }
 
         public LoginViewModel()
         {
             helper = new HelperAutoescuelaAzure();
+
+            SubmitCommand = new Command(OnSubmit);
         }
-    
+
+        public void OnSubmit()
+        {
+            Plantilla empleado = new Plantilla();
+
+            Task.Run(async () =>
+            {
+                empleado = await helper.ExisteEmpleado(email, password);
+
+            });
+
+            if (empleado.Usuario == null)
+            {
+                DisplayInvalidLoginPrompt();
+            }
+
+        }
     }
 }
