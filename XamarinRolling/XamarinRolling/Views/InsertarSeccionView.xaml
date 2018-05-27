@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRolling.Views.InsertarSeccionView"
+             xmlns:viewmodels="clr-namespace:XamarinRolling.ViewModels"
+             x:Name="InsertarSeccion">
+    <ContentPage.BindingContext>
+        <viewmodels:InsertarSeccionViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <!--<Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                
+            </Grid.RowDefinitions>-->
+            <StackLayout Orientation="Vertical">
+                <Image Source="local.png" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Seccion.Seccion}" Keyboard="Numeric" Placeholder="SECCIÓN"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Seccion.Situacion}" Placeholder="SITUACIÓN"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Seccion.Email}" Keyboard="Email" Placeholder="EMAIL"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Seccion.Telefono}" Keyboard="Numeric" Placeholder="TELÉFONO"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Seccion.Direccion}" Placeholder="DIRECCIÓN"/>
+                <Button Text="Insertar Sección" HorizontalOptions="FillAndExpand" BackgroundColor="Green" TextColor="White" FontAttributes="Bold"
+                                  Command="{Binding InsertarSeccion}"/>
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

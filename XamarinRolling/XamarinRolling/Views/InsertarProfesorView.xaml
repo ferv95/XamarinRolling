@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRolling.Views.InsertarProfesorView"
+             xmlns:viewmodels="clr-namespace:XamarinRolling.ViewModels"
+             x:Name="InsertarProfesor">
+    <ContentPage.BindingContext>
+        <viewmodels:InsertarProfesorViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Orientation="Vertical">
+                <Entry x:Name="txtcodigo" HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Codigo}" Placeholder="CÓDIGO" Keyboard="Numeric"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Nombre}" Placeholder="NOMBRE"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Apellido}" Placeholder="APELLIDO"/>
+                <Entry x:Name="txtseccion" HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Seccion}" Placeholder="SECCIÓN"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Email}" Placeholder="EMAIL" Keyboard="Email"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Telefono}" Placeholder="TELÉFONO" Keyboard="Telephone"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Practicas}" Placeholder="PRÁCTICAS: Si/No"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Teoricas}" Placeholder="TEÓRICAS: Si/No"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Horario}" Placeholder="HORARIO"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Usuario}" Placeholder="USUARIO"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Password}" Placeholder="CONTRASEÑA"/>
+                <Button Text="Insertar Profesor" VerticalOptions="End" BackgroundColor="Green" TextColor="White" FontAttributes="Bold"
+                        Command="{Binding InsertarProfesor}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

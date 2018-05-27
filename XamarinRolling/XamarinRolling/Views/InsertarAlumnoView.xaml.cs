@@ -15,6 +15,8 @@ namespace XamarinRolling.Views
 		public InsertarAlumnoView ()
 		{
 			InitializeComponent ();
+            txtseccion.Text = "SECCIÓN";
+            txtcodigo.Text = "CÓDIGO";
 		}
 	}
 }
