@@ -46,6 +46,13 @@
                 <Label Text="TELEFONO:" VerticalOptions="Center"/>
                 <Entry HorizontalOptions="FillAndExpand"
                            Text="{Binding Alumno.Telefono}"/>
+                <Label Text="SECCIÓN:" VerticalOptions="Center"/>
+                <Picker Title="{Binding Alumno.Seccion}" SelectedItem="{Binding Alumno.Seccion}">
+                <Picker.Items>
+                    <x:String>10</x:String>
+                    <x:String>20</x:String>
+                </Picker.Items>
+            </Picker>
             </StackLayout>
             <StackLayout Grid.Row="5" Orientation="Horizontal">
                 <Label Text="DIRECCIÓN:" VerticalOptions="Center"/>

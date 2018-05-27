@@ -190,4 +190,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\lupa.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rolling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo.png" />
+  </ItemGroup>
 </Project>

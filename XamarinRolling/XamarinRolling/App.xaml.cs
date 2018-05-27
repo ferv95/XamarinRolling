@@ -1,6 +1,7 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinRolling.Models;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace XamarinRolling
@@ -11,8 +12,8 @@ namespace XamarinRolling
 		{
 			InitializeComponent();
 
-			MainPage = new Views.LoginPage();
-		}
+			MainPage = new SplashPage();
+        }
 
 		protected override void OnStart ()
 		{

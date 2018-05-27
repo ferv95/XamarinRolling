@@ -16,9 +16,10 @@ namespace XamarinRolling.ViewModels
         public PerfilViewModel()
         {
             this.helper = new HelperAutoescuelaAzure();
+            int id = DatosPerfil.CodPerfil;
             Task.Run(async () =>
             {
-                int id = DatosPerfil.CodPerfil;
+                
                 this.UsuarioPerfil = await helper.GetEmpleado(id);
             });
         }
