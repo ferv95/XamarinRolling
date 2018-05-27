@@ -15,6 +15,6 @@ namespace XamarinRolling.Views
 		public AdministradoresView ()
 		{
 			InitializeComponent ();
-		}
+        }
 	}
 }

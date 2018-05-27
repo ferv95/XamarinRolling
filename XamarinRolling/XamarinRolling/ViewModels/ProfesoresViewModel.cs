@@ -21,13 +21,6 @@ namespace XamarinRolling.ViewModels
             Task.Run(async () => {
                 List<Plantilla> lista = await helper.GetProfesores();
                 this.Profesores = new ObservableCollection<Plantilla>(lista);
-                //foreach (var e in Profesores)
-                //{
-                //    if(e.Image == null)
-                //    {
-                //        e.Image = "avatar.png";
-                //    }
-                //}
             });
         }
 
@@ -88,6 +81,10 @@ namespace XamarinRolling.ViewModels
                 foreach (Plantilla p in this.Profesores)
                 {
                     if (p.Apellido.ToUpper().Contains(filtro.ToUpper()))
+                    {
+                        listaFiltrada.Add(p);
+                    }
+                    if (p.Nombre.ToUpper().Contains(filtro.ToUpper()))
                     {
                         listaFiltrada.Add(p);
                     }

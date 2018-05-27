@@ -85,6 +85,10 @@ namespace XamarinRolling.ViewModels
                     {
                         listaFiltrada.Add(p);
                     }
+                    if (p.Nombre.ToUpper().Contains(filtro.ToUpper()))
+                    {
+                        listaFiltrada.Add(p);
+                    }
                 }
                 this.Administradores = listaFiltrada;
             }
