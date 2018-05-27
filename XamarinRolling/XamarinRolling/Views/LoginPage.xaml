@@ -4,7 +4,7 @@
              BackgroundImage="Splash.jpg"
              x:Class="XamarinRolling.Views.LoginPage">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="110">
             <BoxView HeightRequest="10"/>
             <Image HorizontalOptions="Center" WidthRequest="300" Source="maco.jpg"/>
             <Frame BackgroundColor="#BF043055" HasShadow="False">

@@ -17,6 +17,7 @@ namespace XamarinRolling.Views
         public MainAutoescuelaView()
         {
             InitializeComponent();
+            
             menu = new List<MasterPageItem>();
             var miperfilview = new MasterPageItem()
             {

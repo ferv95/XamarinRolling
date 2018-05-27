@@ -9,6 +9,7 @@ using XamarinRolling.Helpers;
 using XamarinRolling.Models;
 using XamarinRolling.ViewModels.Base;
 using XamarinRolling.ViewModels;
+using XamarinRolling.Views;
 
 namespace XamarinRolling.ViewModels
 {
@@ -53,8 +54,10 @@ namespace XamarinRolling.ViewModels
                     }
                     else
                     {
+                        MainAutoescuelaView main = new MainAutoescuelaView();
                         DatosPerfil.CodPerfil = empleado.Codigo;
-                        await Application.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new Views.MainAutoescuelaView()));
+                        await Application.Current.MainPage.Navigation.PushModalAsync(main);
+                        
                     }
 
                 });
