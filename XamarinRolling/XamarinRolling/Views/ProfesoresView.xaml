@@ -10,16 +10,20 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand">
                 <Button x:Name="btnnuevo" BackgroundColor="Green" TextColor="White"  Text="Insertar nuevo profesor"
                         HorizontalOptions="FillAndExpand" VerticalOptions="Start" FontAttributes="Bold" HeightRequest="40"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <Image Source="lupa.png" WidthRequest="15" VerticalOptions="Center" Margin="5"/>
                 <Entry x:Name="entryBusqueda" HorizontalOptions="FillAndExpand" Placeholder="Buscar..."/>
             </StackLayout>
             <ListView ItemsSource="{Binding Profesores}"
-                    SelectedItem="{Binding ProfesorSeleccionado}" Grid.Row="1"
+                    SelectedItem="{Binding ProfesorSeleccionado}" Grid.Row="2"
                       x:Name="lstprofesores">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -38,7 +42,6 @@
                                 <Label FontSize="20"
                                    Text="{Binding Apellido}"
                                    HorizontalOptions="Start"/>
-
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
