@@ -9,16 +9,6 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
-            <!--<Grid.RowDefinitions>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                
-            </Grid.RowDefinitions>-->
             <StackLayout Orientation="Vertical">
                 <Image Source="local.png" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Seccion.Seccion}" Keyboard="Numeric" Placeholder="SECCIÓN"/>

@@ -19,7 +19,7 @@
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Alumno.Telefono}" Placeholder="TELÉFONO" Keyboard="Telephone"/>
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Alumno.Direccion}" Placeholder="DIRECCIÓN"/>
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Alumno.Usuario}" Placeholder="USUARIO"/>
-                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Alumno.Password}" Placeholder="CONTRASEÑA"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Alumno.Password}" Placeholder="CONTRASEÑA" IsPassword="True"/>
                 <Button Text="Insertar Alumno" VerticalOptions="End" BackgroundColor="Green" TextColor="White" FontAttributes="Bold"
                         Command="{Binding InsertarAlumno}"/>
             </StackLayout>

@@ -15,7 +15,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand">
-                <Button x:Name="btnnuevo" BackgroundColor="Green" TextColor="White"  Text="Insertar nuevo administrador"
+                <Button x:Name="btnnuevo" BackgroundColor="Green" TextColor="White"  Text="Insertar nuevo administrador" Command="{Binding Nuevo}"
                         HorizontalOptions="FillAndExpand" VerticalOptions="Start" FontAttributes="Bold" HeightRequest="40"/>
             </StackLayout>
             <ListView ItemsSource="{Binding Administradores}"
