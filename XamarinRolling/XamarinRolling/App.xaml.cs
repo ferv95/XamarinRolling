@@ -11,7 +11,7 @@ namespace XamarinRolling
 		{
 			InitializeComponent();
 
-			MainPage = new Views.LoginPage();
+			MainPage = new Views.MainAutoescuelaView();
 		}
 
 		protected override void OnStart ()

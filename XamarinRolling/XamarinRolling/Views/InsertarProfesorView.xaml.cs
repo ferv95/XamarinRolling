@@ -15,8 +15,26 @@ namespace XamarinRolling.Views
 		public InsertarProfesorView ()
 		{
 			InitializeComponent ();
-            txtseccion.Text = "SECCIÓN";
-            txtcodigo.Text = "CÓDIGO";
+            txtseccion.Text = "";
+            txtcodigo.Text = "";
+            txttelef.Text = "";
+            txtpass.Text = "";
+            txtrepass.Text = "";
+            txtrepass.PropertyChanged += Txtrepass_PropertyChanged;
         }
-	}
+
+        private void Txtrepass_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (txtrepass.Text != txtpass.Text)
+            {
+                btninsertar.IsEnabled = false;
+                txterror.IsVisible = true;
+            }
+            else
+            {
+                btninsertar.IsEnabled = true;
+                txterror.IsVisible = false;
+            }
+        }
+    }
 }

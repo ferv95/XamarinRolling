@@ -35,7 +35,10 @@ namespace XamarinRolling.ViewModels
             {
                 return new Command(async () => {
                     Alumno.Image = "avatar.png";
-                    Alumno.Rol = "ALUMNO";                    
+                    Alumno.Rol = "ALUMNO"; 
+                    if (Alumno.Password != "")
+                    {
+                        
                     if (Alumno.Codigo == 0)
                     {
                         Alumno = null;
@@ -52,6 +55,7 @@ namespace XamarinRolling.ViewModels
                             await helper.CrearAlumno(this.Alumno);
                             await Application.Current.MainPage.Navigation.PopModalAsync();
                         }
+                    }
                     }                                                         
                 });
             }
