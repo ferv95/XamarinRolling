@@ -20,7 +20,7 @@
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Teoricas}" Placeholder="TEÓRICAS: Si/No"/>
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Horario}" Placeholder="HORARIO"/>
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Usuario}" Placeholder="USUARIO"/>
-                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Password}" Placeholder="CONTRASEÑA"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Password}" Placeholder="CONTRASEÑA" IsPassword="True"/>
                 <Button Text="Insertar Profesor" VerticalOptions="End" BackgroundColor="Green" TextColor="White" FontAttributes="Bold"
                         Command="{Binding InsertarProfesor}"/>
             </StackLayout>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRolling.Views.InsertarAdministradorView"
+             xmlns:viewmodels="clr-namespace:XamarinRolling.ViewModels"
+             x:Name="InsertarAdministrador">
+    <ContentPage.BindingContext>
+        <viewmodels:InsertarAdministradorViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Orientation="Vertical">
+                <Image Source="avatar.png" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="100"/>
+                <Entry x:Name="txtcodigo" HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Codigo}" Placeholder="CÓDIGO" Keyboard="Numeric"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Nombre}" Placeholder="NOMBRE"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Apellido}" Placeholder="APELLIDO"/>
+                <Entry x:Name="txtseccion" HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Seccion}" Placeholder="SECCIÓN"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Email}" Placeholder="EMAIL" Keyboard="Email"/>
+                <Entry x:Name="txttelef" HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Telefono}" Placeholder="TELÉFONO" Keyboard="Telephone"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Horario}" Placeholder="HORARIO"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Usuario}" Placeholder="USUARIO"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Password}" Placeholder="CONTRASEÑA" IsPassword="True"/>
+                <Button Text="Insertar Administrador" VerticalOptions="End" BackgroundColor="Green" TextColor="White" FontAttributes="Bold"
+                        Command="{Binding InsertarAdministrador}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

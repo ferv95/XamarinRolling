@@ -100,6 +100,17 @@ namespace XamarinRolling.ViewModels
                     this.Administradores = new ObservableCollection<Plantilla>(lista);
                 });
             }
-        }                
+        }
+
+        public Command Nuevo
+        {
+            get
+            {
+                return new Command(async () => {
+                    InsertarAdministradorView insertarview = new InsertarAdministradorView();
+                    await Application.Current.MainPage.Navigation.PushModalAsync(insertarview);
+                });
+            }
+        }
     }
 }
