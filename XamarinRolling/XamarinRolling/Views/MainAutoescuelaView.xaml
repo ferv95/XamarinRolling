@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRolling.Views.MainAutoescuelaView">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu"
+                 BackgroundColor="#e8e8e8">
+
+            <StackLayout Orientation="Vertical">
+                <StackLayout BackgroundColor="#000000"
+                     HeightRequest="100">
+                    <Image Source="drcar.jpg" WidthRequest="500"/>
+                </StackLayout>
+                <ListView x:Name="lsvmenu"
+                  RowHeight="60"
+                  SeparatorVisibility="None"
+                  BackgroundColor="#e8e8e8">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand"
+                             Orientation="Horizontal"
+                             Padding="20,10,0,10"
+                             Spacing="20">
+                                    <Label Text="{Binding Titulo}"
+                         FontSize="Medium"
+                         VerticalOptions="Center"
+                         TextColor="Black"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+    </MasterDetailPage>

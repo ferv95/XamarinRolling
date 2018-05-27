@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xaml="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:viewmodels="clr-namespace:XamarinRolling.ViewModels"
+             x:Name="VistaAdministradores"
+             x:Class="XamarinRolling.Views.AdministradoresView">
+    <ContentPage.BindingContext>
+        <viewmodels:AdministradoresViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand">
+                <Button x:Name="btnnuevo" BackgroundColor="Green" TextColor="White"  Text="Insertar nuevo administrador"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Start" FontAttributes="Bold" HeightRequest="40"/>
+            </StackLayout>
+            <ListView ItemsSource="{Binding Administradores}"
+                    SelectedItem="{Binding AdministradorSeleccionado}" Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                <Image Source="card.png" WidthRequest="30"
+                                   HorizontalOptions="End">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.DetallesAdministrador, Source={x:Reference VistaAdministradores}}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="{Binding Image}" WidthRequest="30"/>
+                                <Label FontSize="20"
+                                   Text="{Binding Nombre}"
+                                   HorizontalOptions="Start"/>
+                                <Label FontSize="20"
+                                   Text="{Binding Apellido}"
+                                   HorizontalOptions="Start"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

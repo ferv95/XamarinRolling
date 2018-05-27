@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:viewmodels="clr-namespace:XamarinRolling.ViewModels"
+             x:Name="VistaSecciones"
+             x:Class="XamarinRolling.Views.SeccionesView">
+    <ContentPage.BindingContext>
+        <viewmodels:SeccionesViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--<StackLayout Grid.Row="0" Orientation="Vertical">
+                <Button x:Name="btnnuevo" BackgroundColor="Green" TextColor="White"  Text="Insertar nueva sección"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Start" FontAttributes="Bold" HeightRequest="40"/>
+                <Entry x:Name="entryBusqueda" HorizontalOptions="FillAndExpand" Placeholder="Buscar..."/>
+            </StackLayout>-->
+            <ListView ItemsSource="{Binding Secciones}"
+                    SelectedItem="{Binding SeccionSeleccionado}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                <Image Source="card.png" WidthRequest="30"
+                                   HorizontalOptions="End">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.DetallesSeccion, Source={x:Reference VistaSecciones}}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="local.png" WidthRequest="30"/>
+                                <Label FontSize="20"
+                                   Text="{Binding Situacion}"
+                                   HorizontalOptions="Start"/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

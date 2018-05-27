@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="DetallesProfesor"
+             BackgroundImage="back.jpg"
+             xmlns:viewmodels="clr-namespace:XamarinRolling.ViewModels"
+             x:Class="XamarinRolling.Views.DetallesProfesor">
+    <ContentPage.BindingContext>
+        <viewmodels:ProfesorViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" Orientation="Horizontal">
+                <Image Source="{Binding Profesor.Image}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Orientation="Horizontal">
+                <Label Text="CODIGO:" VerticalOptions="Center"/>
+                <Label HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="Black" FontSize="Large"
+                           Text="{Binding Profesor.Codigo}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Orientation="Horizontal">
+                <Label Text="NOMBRE:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Profesor.Nombre}"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Profesor.Apellido}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="3" Orientation="Horizontal">
+                <Label Text="EMAIL:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Profesor.Email}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="4" Orientation="Horizontal">
+                <Label Text="TELEFONO:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Profesor.Telefono}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="5" Orientation="Horizontal">
+                <Label Text="HORARIO:" VerticalOptions="Center"/>
+
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Profesor.Horario}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="6" Orientation="Horizontal">
+                <Label Text="TEÓRICAS:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Teoricas}"/>
+                <Label Text="PRÁCTICAS:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Practicas}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="7" Orientation="Horizontal">
+                <Label Text="USUARIO:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Profesor.Usuario}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="8" Orientation="Horizontal">
+                <Label Text="CONTRASEÑA:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand" IsPassword="True"
+                           Text="{Binding Profesor.Password}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="9" Orientation="Horizontal">
+                <!--<Button Text="Nuevo Doctor" HorizontalOptions="Center"
+                                  Command="{Binding InsertarDoctor}"/>-->
+                <Button Text="Modificar Profesor" HorizontalOptions="Start" BackgroundColor="Yellow" TextColor="Black" FontAttributes="Bold"
+                                  Command="{Binding ModificarProfesor}"/>
+                <Label Text="          " VerticalOptions="Center"/>
+                <Button Text="Eliminar Profesor" HorizontalOptions="End" BackgroundColor="Red" TextColor="White" FontAttributes="Bold"
+                                  Command="{Binding EliminarProfesor}" BorderRadius="5" BorderColor="Black"/>
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

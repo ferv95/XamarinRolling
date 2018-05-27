@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             BackgroundImage="back.jpg"
+              xmlns:viewmodels="clr-namespace:XamarinRolling.ViewModels"
+              x:Name="DetallesAlumno"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRolling.Views.DetallesAlumno">
+    <ContentPage.BindingContext>
+        <viewmodels:AlumnoViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" Orientation="Horizontal">
+                <Image Source="{Binding Alumno.Image}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Orientation="Horizontal">
+                <Label Text="CODIGO:" VerticalOptions="Center"/>
+                <Label HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="Black" FontSize="Large"
+                           Text="{Binding Alumno.Codigo}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Orientation="Horizontal">
+                <Label Text="NOMBRE:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Alumno.Nombre}"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Alumno.Apellidos}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="3" Orientation="Horizontal">
+                <Label Text="EMAIL:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Alumno.Email}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="4" Orientation="Horizontal">
+                <Label Text="TELEFONO:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Alumno.Telefono}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="5" Orientation="Horizontal">
+                <Label Text="DIRECCIÓN:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Alumno.Direccion}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="6" Orientation="Horizontal">
+                <Label Text="USUARIO:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Alumno.Usuario}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="7" Orientation="Horizontal">
+                <Label Text="CONTRASEÑA:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand" IsPassword="True"
+                           Text="{Binding Alumno.Password}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="8" Orientation="Horizontal">
+                <!--<Button Text="Nuevo Doctor" HorizontalOptions="Center"
+                                  Command="{Binding InsertarDoctor}"/>-->
+                <Button Text="Modificar Alumno" HorizontalOptions="Start" BackgroundColor="Yellow" TextColor="Black" FontAttributes="Bold"
+                                  Command="{Binding ModificarAlumno}"/>
+                <Label Text="          " VerticalOptions="Center"/>
+                <Button Text="Eliminar Alumno" HorizontalOptions="End" BackgroundColor="Red" TextColor="White" FontAttributes="Bold"
+                                  Command="{Binding EliminarAlumno}" BorderRadius="5" BorderColor="Black"/>
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
