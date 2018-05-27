@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="Perfil"
+             BackgroundImage="back.jpg"
+             xmlns:viewmodels="clr-namespace:XamarinRolling.ViewModels"
              x:Class="XamarinRolling.Views.MiPerfilView">
+    <ContentPage.BindingContext>
+        <viewmodels:PerfilViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -17,27 +23,27 @@
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="0" Orientation="Horizontal">
-                <Image Source="director.png" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                <Image Source="{Binding Plantilla.Image}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
             </StackLayout>
             <StackLayout Grid.Row="1" Orientation="Horizontal">
                 <Label Text="CODIGO:" VerticalOptions="Center"/>
                 <Label HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="Black" FontSize="Large"
-                           Text="01"/>
+                           Text="{Binding Plantilla.Codigo}"/>
             </StackLayout>
             <StackLayout Grid.Row="2" Orientation="Horizontal">
                 <Label Text="NOMBRE:" VerticalOptions="Center"/>
                 <Label HorizontalOptions="FillAndExpand" VerticalOptions="Center" FontSize="Medium" TextColor="Black"
-                           Text="Mike Myers"/>
+                           Text="{Binding Plantilla.NombreApellido}"/>
             </StackLayout>
             <StackLayout Grid.Row="3" Orientation="Horizontal">
                 <Label Text="EMAIL:" VerticalOptions="Center" />
                 <Label HorizontalOptions="FillAndExpand"  VerticalOptions="Center" FontSize="Medium" TextColor="Black"
-                           Text="Doctormaligno@mikemyers.com"/>
+                           Text="{Binding Plantilla.Email}"/>
             </StackLayout>
             <StackLayout Grid.Row="4" Orientation="Horizontal">
                 <Label Text="TELEFONO:" VerticalOptions="Center"/>
                 <Label HorizontalOptions="FillAndExpand"  VerticalOptions="Center" FontSize="Medium" TextColor="Black"
-                           Text="741258748"/>
+                           Text="{Binding Plantilla.Telefono}"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

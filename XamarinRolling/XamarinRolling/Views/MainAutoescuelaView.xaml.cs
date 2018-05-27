@@ -54,7 +54,7 @@ namespace XamarinRolling.Views
             menu.Add(seccionesview);
             this.lsvmenu.ItemsSource = menu;
             Detail =
-new NavigationPage((Page)Activator.CreateInstance(typeof(PaginaPrincipal)));
+                new NavigationPage((Page)Activator.CreateInstance(typeof(PaginaPrincipal)));
             this.lsvmenu.ItemSelected += ListView_ItemSelected;
         }
 

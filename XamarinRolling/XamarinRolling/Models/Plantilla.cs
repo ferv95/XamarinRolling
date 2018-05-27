@@ -35,5 +35,13 @@ namespace XamarinRolling.Models
         public String Usuario { get; set; }
         [JsonProperty("IMAGE")]
         public String Image { get; set; }
+
+        public String NombreApellido
+        {
+            get
+            {
+                return this.Nombre + " " + this.Apellido;
+            }
+        }
     }
 }
