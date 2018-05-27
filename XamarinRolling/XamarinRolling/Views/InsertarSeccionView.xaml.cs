@@ -15,6 +15,8 @@ namespace XamarinRolling.Views
 		public InsertarSeccionView ()
 		{
 			InitializeComponent ();
+            txtseccion.Text = "";
+            txttelef.Text = "";
 		}
 	}
 }

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinRolling.Views.InsertarAdministradorView"
+              BackgroundImage="back.jpg"
              xmlns:viewmodels="clr-namespace:XamarinRolling.ViewModels"
              x:Name="InsertarAdministrador">
     <ContentPage.BindingContext>
@@ -9,18 +10,42 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
-            <StackLayout Orientation="Vertical">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" Orientation="Vertical">
                 <Image Source="avatar.png" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="100"/>
                 <Entry x:Name="txtcodigo" HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Codigo}" Placeholder="CÓDIGO" Keyboard="Numeric"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Orientation="Horizontal">
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Nombre}" Placeholder="NOMBRE"/>
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Apellido}" Placeholder="APELLIDO"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2">
                 <Entry x:Name="txtseccion" HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Seccion}" Placeholder="SECCIÓN"/>
+            </StackLayout>
+            <StackLayout Grid.Row="3" Orientation="Horizontal">
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Email}" Placeholder="EMAIL" Keyboard="Email"/>
                 <Entry x:Name="txttelef" HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Telefono}" Placeholder="TELÉFONO" Keyboard="Telephone"/>
+            </StackLayout>
+            <StackLayout Grid.Row="4" Orientation="Horizontal">
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Horario}" Placeholder="HORARIO"/>
+            </StackLayout>
+            <StackLayout Grid.Row="5" Orientation="Horizontal">
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Usuario}" Placeholder="USUARIO"/>
-                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Password}" Placeholder="CONTRASEÑA" IsPassword="True"/>
-                <Button Text="Insertar Administrador" VerticalOptions="End" BackgroundColor="Green" TextColor="White" FontAttributes="Bold"
+            </StackLayout>
+            <StackLayout Grid.Row="6" Orientation="Vertical">
+                <Entry x:Name="txtpass" HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Password}" Placeholder="CONTRASEÑA" IsPassword="True"/>
+                <Entry x:Name="txtrepass" HorizontalOptions="FillAndExpand" Text="" Placeholder="REPITE CONTRASEÑA" IsPassword="True"/>
+            </StackLayout>
+            <StackLayout Grid.Row="7" Orientation="Vertical">
+                <Label x:Name="txterror" HorizontalOptions="Center"  Text="Las contraseñas deben ser iguales" TextColor="Red" IsVisible="False"/>
+                <Button x:Name="btninsertar" Text="Insertar Administrador" VerticalOptions="End" BackgroundColor="Green" TextColor="White" FontAttributes="Bold"
                         Command="{Binding InsertarAdministrador}"/>
             </StackLayout>
         </Grid>

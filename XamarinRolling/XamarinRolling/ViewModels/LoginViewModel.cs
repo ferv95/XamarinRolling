@@ -1,13 +1,13 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using XamarinRolling.Helpers;
 using XamarinRolling.Models;
-using System.Threading.Tasks;
+using XamarinRolling.ViewModels.Base;
 
 namespace XamarinRolling.ViewModels
 {
