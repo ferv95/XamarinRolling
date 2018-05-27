@@ -74,5 +74,16 @@ namespace XamarinRolling.ViewModels
                 });
             }
         }
+
+        public Command Nuevo
+        {
+            get
+            {
+                return new Command(async () => {
+                    InsertarSeccionView insertarview = new InsertarSeccionView();
+                    await Application.Current.MainPage.Navigation.PushModalAsync(insertarview);
+                });
+            }
+        }
     }
 }

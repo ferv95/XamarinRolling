@@ -100,6 +100,17 @@ namespace XamarinRolling.ViewModels
                 });
             }
         }
+
+        public Command Nuevo
+        {
+            get
+            {
+                return new Command(async () => {
+                    InsertarProfesorView insertarview = new InsertarProfesorView();
+                    await Application.Current.MainPage.Navigation.PushModalAsync(insertarview);
+                });
+            }
+        }
     }
 
 }

@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XamarinRolling.ViewModels;
 
 namespace XamarinRolling.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SeccionesView : ContentPage
+	public partial class InsertarProfesorView : ContentPage
 	{
-		public SeccionesView ()
+		public InsertarProfesorView ()
 		{
 			InitializeComponent ();
+            txtseccion.Text = "SECCIÓN";
+            txtcodigo.Text = "CÓDIGO";
         }
 	}
 }

@@ -35,6 +35,7 @@ namespace XamarinRolling.ViewModels
                 return new Command(async () =>
                 {
                     await helper.CrearSeccion(this.Seccion);
+                    await Application.Current.MainPage.Navigation.PopModalAsync();
                 });
             }
         }
