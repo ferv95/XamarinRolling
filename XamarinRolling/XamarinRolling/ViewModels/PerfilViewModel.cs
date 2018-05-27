@@ -13,11 +13,12 @@ namespace XamarinRolling.ViewModels
         private HelperAutoescuelaAzure helper;
         private Plantilla _UsuarioPerfil;
 
-        public PerfilViewModel(int id)
+        public PerfilViewModel()
         {
             this.helper = new HelperAutoescuelaAzure();
             Task.Run(async () =>
             {
+                int id = int.Parse(App.Current.Id.ToString());
                 this.UsuarioPerfil = await helper.GetEmpleado(id);
             });
         }
