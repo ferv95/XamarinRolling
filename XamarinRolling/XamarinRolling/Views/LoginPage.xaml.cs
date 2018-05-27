@@ -10,14 +10,14 @@ using XamarinRolling.ViewModels;
 
 namespace XamarinRolling.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginPage : ContentPage
-	{
-		public LoginPage ()
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LoginPage : ContentPage
+    {
+        public LoginPage()
         {
             var vm = new LoginViewModel();
             this.BindingContext = vm;
-            vm.DisplayInvalidLoginPrompt += () => DisplayAlert("Error", "Invalid Login, try again", "OK");
+            vm.DisplayInvalidLoginPrompt += () => DisplayAlert("Error", "Invalido", "OK");
             InitializeComponent();
 
             Email.Completed += (object sender, EventArgs e) =>
@@ -30,5 +30,5 @@ namespace XamarinRolling.Views
                 vm.SubmitCommand.Execute(null);
             };
         }
-	}
+    }
 }
