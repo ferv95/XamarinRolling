@@ -37,6 +37,7 @@ namespace XamarinRolling.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
+
         public ICommand SubmitCommand { protected set; get; }
 
         public LoginViewModel()
