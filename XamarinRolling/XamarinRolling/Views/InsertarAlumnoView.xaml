@@ -27,7 +27,13 @@
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Alumno.Apellidos}" Placeholder="APELLIDO"/>
             </StackLayout>
             <StackLayout Grid.Row="2">
-            <Entry x:Name="txtseccion" HorizontalOptions="FillAndExpand" Text="{Binding Alumno.Seccion}" Placeholder="SECCIÓN"/>
+                <Picker Title="Elige una sección" SelectedItem="{Binding Alumno.Seccion}">
+                    <Picker.Items>
+                        <x:String>10</x:String>
+                        <x:String>20</x:String>
+                    </Picker.Items>
+                </Picker>
+                <!--<Entry x:Name="txtseccion" HorizontalOptions="FillAndExpand" Text="{Binding Alumno.Seccion}" Placeholder="SECCIÓN"/>-->
             </StackLayout>
             <StackLayout Grid.Row="3" Orientation="Horizontal">
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Alumno.Email}" Placeholder="EMAIL" Keyboard="Email"/>

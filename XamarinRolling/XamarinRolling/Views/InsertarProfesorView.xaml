@@ -27,19 +27,41 @@
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Nombre}" Placeholder="NOMBRE"/>
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Apellido}" Placeholder="APELLIDO"/>
             </StackLayout>
-            <StackLayout Grid.Row="2">
-                <Entry x:Name="txtseccion" HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Seccion}" Placeholder="SECCIÓN"/>
+            <StackLayout Grid.Row="2" Orientation="Vertical">
+                <Picker Title="Elige una sección" SelectedItem="{Binding Profesor.Seccion}">
+                    <Picker.Items>
+                        <x:String>10</x:String>
+                        <x:String>20</x:String>
+                    </Picker.Items>
+                </Picker>
             </StackLayout>
             <StackLayout Grid.Row="3" Orientation="Horizontal">
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Email}" Placeholder="EMAIL" Keyboard="Email"/>
                 <Entry x:Name="txttelef" HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Telefono}" Placeholder="TELÉFONO" Keyboard="Telephone"/>
             </StackLayout>
             <StackLayout Grid.Row="4" Orientation="Horizontal">
-                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Horario}" Placeholder="HORARIO"/>
+                <Picker Title="Elige un horario" SelectedItem="{Binding Profesor.Horario}">
+                    <Picker.Items>
+                        <x:String>12:00 - 18:00</x:String>
+                        <x:String>8:00 - 15:30</x:String>
+                        <x:String>15:30 - 23:00</x:String>
+                        <x:String>9:30 - 14:00 | 17:00 - 20:00</x:String>
+                    </Picker.Items>
+                </Picker>
             </StackLayout>
             <StackLayout Grid.Row="5" Orientation="Horizontal">
-                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Practicas}" Placeholder="PRÁCTICAS: Si/No"/>
-                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Teoricas}" Placeholder="TEÓRICAS: Si/No"/>
+                <Picker Title="¿PRÁCTICAS?" SelectedItem="{Binding Profesor.Practicas}">
+                    <Picker.Items>
+                        <x:String>Si</x:String>
+                        <x:String>No</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker Title="¿TEÓRICAS?" SelectedItem="{Binding Profesor.Teoricas}">
+                    <Picker.Items>
+                        <x:String>Si</x:String>
+                        <x:String>No</x:String>
+                    </Picker.Items>
+                </Picker>
             </StackLayout>
             <StackLayout Grid.Row="6" Orientation="Horizontal">
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Usuario}" Placeholder="USUARIO"/>

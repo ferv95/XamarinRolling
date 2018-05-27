@@ -10,13 +10,13 @@ using XamarinRolling.ViewModels;
 
 namespace XamarinRolling.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class InsertarAlumnoView : ContentPage
-	{
-		public InsertarAlumnoView ()
-		{
-			InitializeComponent ();
-            txtseccion.Text = "";
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class InsertarAlumnoView : ContentPage
+    {
+        public InsertarAlumnoView()
+        {
+            InitializeComponent();
+
             txtcodigo.Text = "";
             txtpass.Text = "";
             txtrepass.Text = "";
@@ -37,7 +37,8 @@ namespace XamarinRolling.Views
                 btninsertar.IsEnabled = true;
                 txterror.IsVisible = false;
             }
-               
+
         }
+
     }
 }

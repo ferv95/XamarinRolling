@@ -27,14 +27,26 @@
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Apellido}" Placeholder="APELLIDO"/>
             </StackLayout>
             <StackLayout Grid.Row="2">
-                <Entry x:Name="txtseccion" HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Seccion}" Placeholder="SECCIÓN"/>
+                <Picker Title="Elige una sección" SelectedItem="{Binding Alumno.Seccion}">
+                    <Picker.Items>
+                        <x:String>10</x:String>
+                        <x:String>20</x:String>
+                    </Picker.Items>
+                </Picker>
             </StackLayout>
             <StackLayout Grid.Row="3" Orientation="Horizontal">
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Email}" Placeholder="EMAIL" Keyboard="Email"/>
                 <Entry x:Name="txttelef" HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Telefono}" Placeholder="TELÉFONO" Keyboard="Telephone"/>
             </StackLayout>
             <StackLayout Grid.Row="4" Orientation="Horizontal">
-                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Horario}" Placeholder="HORARIO"/>
+                <Picker Title="Elige un horario" SelectedItem="{Binding Administrador.Horario}">
+                    <Picker.Items>
+                        <x:String>12:00 - 18:00</x:String>
+                        <x:String>8:00 - 15:30</x:String>
+                        <x:String>15:30 - 23:00</x:String>
+                        <x:String>9:30 - 14:00 | 17:00 - 20:00</x:String>
+                    </Picker.Items>
+                </Picker>
             </StackLayout>
             <StackLayout Grid.Row="5" Orientation="Horizontal">
                 <Entry HorizontalOptions="FillAndExpand" Text="{Binding Administrador.Usuario}" Placeholder="USUARIO"/>

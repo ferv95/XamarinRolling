@@ -52,6 +52,9 @@
 
                 <Entry HorizontalOptions="FillAndExpand"
                            Text="{Binding Profesor.Horario}"/>
+                <Label Text="SECCIÓN:" VerticalOptions="Center"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                           Text="{Binding Profesor.Seccion}"/>
             </StackLayout>
             <StackLayout Grid.Row="6" Orientation="Horizontal">
                 <Label Text="TEÓRICAS:" VerticalOptions="Center"/>

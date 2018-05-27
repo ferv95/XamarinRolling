@@ -9,13 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace XamarinRolling.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class InsertarProfesorView : ContentPage
-	{
-		public InsertarProfesorView ()
-		{
-			InitializeComponent ();
-            txtseccion.Text = "";
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class InsertarProfesorView : ContentPage
+    {
+        public InsertarProfesorView()
+        {
+            InitializeComponent();
             txtcodigo.Text = "";
             txttelef.Text = "";
             txtpass.Text = "";
