@@ -50,17 +50,37 @@
             <StackLayout Grid.Row="5" Orientation="Horizontal">
                 <Label Text="HORARIO:" VerticalOptions="Center"/>
 
-                <Entry HorizontalOptions="FillAndExpand"
-                           Text="{Binding Profesor.Horario}"/>
+                <Picker Title="{Binding Profesor.Horario}" SelectedItem="{Binding Profesor.Horario}">
+                    <Picker.Items>
+                        <x:String>12:00 - 18:00</x:String>
+                        <x:String>8:00 - 15:30</x:String>
+                        <x:String>15:30 - 23:00</x:String>
+                        <x:String>9:30 - 14:00 | 17:00 - 20:00</x:String>
+                    </Picker.Items>
+                </Picker>
                 <Label Text="SECCIÓN:" VerticalOptions="Center"/>
-                <Entry HorizontalOptions="FillAndExpand"
-                           Text="{Binding Profesor.Seccion}"/>
+                <Picker Title="{Binding Profesor.Seccion}" SelectedItem="{Binding Profesor.Seccion}">
+                    <Picker.Items>
+                        <x:String>10</x:String>
+                        <x:String>20</x:String>
+                    </Picker.Items>
+                </Picker>
             </StackLayout>
             <StackLayout Grid.Row="6" Orientation="Horizontal">
-                <Label Text="TEÓRICAS:" VerticalOptions="Center"/>
-                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Teoricas}"/>
                 <Label Text="PRÁCTICAS:" VerticalOptions="Center"/>
-                <Entry HorizontalOptions="FillAndExpand" Text="{Binding Profesor.Practicas}"/>
+                <Picker Title="{Binding Profesor.Practicas}" SelectedItem="{Binding Profesor.Practicas}">
+                    <Picker.Items>
+                        <x:String>Si</x:String>
+                        <x:String>No</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="TEÓRICAS:" VerticalOptions="Center"/>
+                <Picker Title="{Binding Profesor.Teoricas}" SelectedItem="{Binding Profesor.Teoricas}">
+                    <Picker.Items>
+                        <x:String>Si</x:String>
+                        <x:String>No</x:String>
+                    </Picker.Items>
+                </Picker>
             </StackLayout>
             <StackLayout Grid.Row="7" Orientation="Horizontal">
                 <Label Text="USUARIO:" VerticalOptions="Center"/>
@@ -73,8 +93,6 @@
                            Text="{Binding Profesor.Password}"/>
             </StackLayout>
             <StackLayout Grid.Row="9" Orientation="Horizontal">
-                <!--<Button Text="Nuevo Doctor" HorizontalOptions="Center"
-                                  Command="{Binding InsertarDoctor}"/>-->
                 <Button Text="Modificar Profesor" HorizontalOptions="Start" BackgroundColor="Yellow" TextColor="Black" FontAttributes="Bold"
                                   Command="{Binding ModificarProfesor}"/>
                 <Label Text="          " VerticalOptions="Center"/>

@@ -48,11 +48,28 @@ namespace XamarinRolling.Views
                 ,
                 PaginaHija = typeof(SeccionesView)
             };
+            var vacio = new MasterPageItem()
+            {
+                Titulo = ""
+                            ,
+
+            };
+            var cerrarsesion = new MasterPageItem()
+            {
+                Titulo = "CERRAR SESIÓN"
+                ,
+                PaginaHija = typeof(LoginPage)
+            };
+
             menu.Add(miperfilview);
             menu.Add(alumnosview);
             menu.Add(profesoresview);
             menu.Add(administradoresview);
             menu.Add(seccionesview);
+            menu.Add(vacio);
+            menu.Add(vacio);
+            menu.Add(vacio);
+            menu.Add(cerrarsesion);
             this.lsvmenu.ItemsSource = menu;
             Detail =
                 new NavigationPage((Page)Activator.CreateInstance(typeof(PaginaPrincipal)));

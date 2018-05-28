@@ -49,8 +49,21 @@
             <StackLayout Grid.Row="5" Orientation="Horizontal">
                 <Label Text="HORARIO:" VerticalOptions="Center"/>
 
-                <Entry HorizontalOptions="FillAndExpand"
-                           Text="{Binding Administrador.Horario}"/>
+                <Picker Title="{Binding Administrador.Horario}" SelectedItem="{Binding Administrador.Horario}">
+                    <Picker.Items>
+                        <x:String>12:00 - 18:00</x:String>
+                        <x:String>8:00 - 15:30</x:String>
+                        <x:String>15:30 - 23:00</x:String>
+                        <x:String>9:30 - 14:00 | 17:00 - 20:00</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="SECCIÓN:" VerticalOptions="Center"/>
+                <Picker Title="{Binding Administrador.Seccion}" SelectedItem="{Binding Administrador.Seccion}">
+                    <Picker.Items>
+                        <x:String>10</x:String>
+                        <x:String>20</x:String>
+                    </Picker.Items>
+                </Picker>
             </StackLayout>
             <StackLayout Grid.Row="6" Orientation="Horizontal">
                 <Label Text="USUARIO:" VerticalOptions="Center"/>
