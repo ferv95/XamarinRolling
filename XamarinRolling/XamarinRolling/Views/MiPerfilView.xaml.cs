@@ -11,11 +11,12 @@ namespace XamarinRolling.Views
 		public MiPerfilView ()
 		{
 			InitializeComponent ();
-            PerfilViewModel viewModel = (PerfilViewModel)BindingContext;
-            if (viewModel.UsuarioPerfil.Image == null)
+            //PerfilViewModel viewModel = new PerfilViewModel();
+            if (this.imgimage.Source == null)
             {
-                viewModel.UsuarioPerfil.Image = "avatar.png";
+                this.imgimage.Source = "avatar.png";
             }
-		}
-	}
+           
+        }
+    }
 }
