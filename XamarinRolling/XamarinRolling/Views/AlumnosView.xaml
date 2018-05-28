@@ -21,7 +21,7 @@
                 <Image Source="lupa.png" WidthRequest="15" VerticalOptions="Center" Margin="5"/>
                 <Entry x:Name="entryBusqueda" HorizontalOptions="FillAndExpand" Placeholder="Buscar..."/>
             </StackLayout>
-            <ListView x:Name="lstview" Grid.Row="2" ItemsSource="{Binding Alumnos}"
+            <ListView x:Name="lstview" Grid.Row="2" ItemsSource="{Binding Alumnos}" 
                     SelectedItem="{Binding AlumnoSeleccionado}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
