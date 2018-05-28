@@ -50,13 +50,13 @@
                 </Picker>
             </StackLayout>
             <StackLayout Grid.Row="5" Orientation="Horizontal">
-                <Picker Title="¿PRÁCTICAS?" SelectedItem="{Binding Profesor.Practicas}">
+                <Picker Title="PRÁCTICAS" SelectedItem="{Binding Profesor.Practicas}">
                     <Picker.Items>
                         <x:String>Si</x:String>
                         <x:String>No</x:String>
                     </Picker.Items>
                 </Picker>
-                <Picker Title="¿TEÓRICAS?" SelectedItem="{Binding Profesor.Teoricas}">
+                <Picker Title="TEÓRICAS" SelectedItem="{Binding Profesor.Teoricas}">
                     <Picker.Items>
                         <x:String>Si</x:String>
                         <x:String>No</x:String>

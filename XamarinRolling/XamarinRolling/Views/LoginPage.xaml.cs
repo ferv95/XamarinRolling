@@ -17,7 +17,7 @@ namespace XamarinRolling.Views
         {
             var vm = new LoginViewModel();
             this.BindingContext = vm;
-            vm.DisplayInvalidLoginPrompt += () => DisplayAlert("Error", "Invalido", "OK");
+            vm.DisplayInvalidLoginPrompt += () => DisplayAlert("Error de inicio", "Usuario o Contraseña inválidos", "Reintentar");
             InitializeComponent();
 
             Email.Completed += (object sender, EventArgs e) =>
