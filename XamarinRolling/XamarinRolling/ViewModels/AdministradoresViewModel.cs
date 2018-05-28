@@ -81,11 +81,18 @@ namespace XamarinRolling.ViewModels
                 ObservableCollection<Plantilla> listaFiltrada = new ObservableCollection<Plantilla>();
                 foreach (Plantilla p in this.Administradores)
                 {
+                    /*
                     if (p.Apellido.ToUpper().Contains(filtro.ToUpper()))
                     {
                         listaFiltrada.Add(p);
                     }
                     if (p.Nombre.ToUpper().Contains(filtro.ToUpper()))
+                    {
+                        listaFiltrada.Add(p);
+                    }
+                    */
+                    if (p.Apellido.ToUpper().Contains(filtro.ToUpper()) ||
+        p.Nombre.ToUpper().Contains(filtro.ToUpper()))
                     {
                         listaFiltrada.Add(p);
                     }

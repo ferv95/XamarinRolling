@@ -18,7 +18,8 @@ namespace XamarinRolling.ViewModels
         public ProfesoresViewModel()
         {
             helper = new HelperAutoescuelaAzure();
-            Task.Run(async () => {
+            Task.Run(async () =>
+            {
                 List<Plantilla> lista = await helper.GetProfesores();
                 this.Profesores = new ObservableCollection<Plantilla>(lista);
             });
@@ -54,12 +55,13 @@ namespace XamarinRolling.ViewModels
         {
             get
             {
-                return new Command(async () => {
+                return new Command(async () =>
+                {
                     if (ProfesorSeleccionado != null)
                     {
                         DetallesProfesor detallesview = new DetallesProfesor();
                         ProfesorViewModel viewmodelProfesor = new ProfesorViewModel();
-                        
+
                         viewmodelProfesor.Profesor = this.ProfesorSeleccionado;
 
                         detallesview.BindingContext = viewmodelProfesor;
@@ -80,11 +82,17 @@ namespace XamarinRolling.ViewModels
                 ObservableCollection<Plantilla> listaFiltrada = new ObservableCollection<Plantilla>();
                 foreach (Plantilla p in this.Profesores)
                 {
-                    if (p.Apellido.ToUpper().Contains(filtro.ToUpper()))
+                    /*if (p.Apellido.ToUpper().Contains(filtro.ToUpper()))
                     {
                         listaFiltrada.Add(p);
                     }
                     if (p.Nombre.ToUpper().Contains(filtro.ToUpper()))
+                    {
+                        listaFiltrada.Add(p);
+                    }*/
+
+                    if (p.Apellido.ToUpper().Contains(filtro.ToUpper()) ||
+        p.Nombre.ToUpper().Contains(filtro.ToUpper()))
                     {
                         listaFiltrada.Add(p);
                     }
@@ -105,7 +113,8 @@ namespace XamarinRolling.ViewModels
         {
             get
             {
-                return new Command(async () => {
+                return new Command(async () =>
+                {
                     InsertarProfesorView insertarview = new InsertarProfesorView();
                     await Application.Current.MainPage.Navigation.PushModalAsync(insertarview);
                 });
